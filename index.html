@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oráculo Azul</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="Favicon.png">
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>🔮 Oráculo Azul</h2>
+    <button class="new-chat">Novo Pedido</button>
+    <input class="search-chat" type="text" placeholder="Buscar Pedidos Anteriores">
+    <div class="chat-history"></div>
+    <div class="configuracoes">
+      <h3>⚙️ Configurações</h3>
+      <label for="language-select">Idioma:</label>
+      <select id="language-select">
+        <option value="pt">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+
+      <label for="theme-select">Tema:</label>
+      <select id="theme-select">
+        <option value="default">Padrão Azul</option>
+        <option value="dark">Modo Escuro</option>
+        <option value="light">Modo Claro</option>
+        <option value="galaxy">Galáxia</option>
+      </select>
+    </div>
+  </aside>
+
+  <main class="chat-container">
+    <h1 class="chat-title">Oráculo Azul</h1>
+    <div id="chat-log" class="chat-log"></div>
+
+    <form id="chat-form" class="chat-form">
+      <input type="text" id="user-input" placeholder="Faça sua pergunta ao Oráculo..." required />
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

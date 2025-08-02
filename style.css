@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  font-family: 'Unbounded', sans-serif;
+  background: linear-gradient(to bottom right, #0d1b2a, #1b263b, #000);
+  color: #e0f7fa;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 280px;
+  background-color: #0a192f;
+  padding: 20px;
+  border-right: 2px solid #1f3548;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar h2 {
+  color: #66d9ef;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.sidebar .new-chat {
+  padding: 10px;
+  font-size: 14px;
+  background-color: #00b4d8;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sidebar .new-chat:hover {
+  background-color: #0077b6;
+}
+
+.sidebar .search-chat {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+}
+
+.chat-history {
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  padding: 10px;
+  color: #90e0ef;
+}
+
+/* CHAT PRINCIPAL */
+.chat-container {
+  flex-grow: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.chat-title {
+  font-size: 2rem;
+  color: #a8dadc;
+  margin-bottom: 20px;
+}
+
+.chat-log {
+  width: 100%;
+  max-width: 700px;
+  height: 60vh;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 174, 255, 0.2);
+}
+
+/* MENSAGENS */
+.chat-log div {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.chat-log .user {
+  color: #00b4d8;
+  font-weight: bold;
+}
+
+.chat-log .bot {
+  color: #ffffff;
+}
+
+/* FORMULÁRIO */
+.chat-form {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 10px 0 0 10px;
+  border: none;
+  outline: none;
+  background-color: #e0fbfc;
+  color: #000;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  background-color: #00b4d8;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0077b6;
+}
+
+/* ====== TEMAS ====== */
+body[data-theme="dark"] {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body[data-theme="dark"] .sidebar {
+  background-color: #1e1e1e;
+  border-right: 2px solid #333;
+}
+
+body[data-theme="dark"] .chat-log {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+body[data-theme="light"] {
+  background: #f2f2f2;
+  color: #222;
+}
+
+body[data-theme="light"] .sidebar {
+  background-color: #ffffff;
+  color: #222;
+}
+
+body[data-theme="light"] .chat-log {
+  background-color: #e0e0e0;
+}
+
+body[data-theme="galaxy"] {
+  background: radial-gradient(circle at center, #0b132b, #1c2541, #3a506b);
+  color: #f0f8ff;
+  overflow: hidden;
+}
+
+body[data-theme="galaxy"]::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: url('https://raw.githubusercontent.com/JulianLaval/canvas-space/master/demo/stars.png') repeat;
+  animation: starsMove 100s linear infinite;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+@keyframes starsMove {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-100px, -200px); }
+}
+
+body[data-theme="galaxy"] .chat-container,
+body[data-theme="galaxy"] .sidebar {
+  position: relative;
+  z-index: 1;
+}
